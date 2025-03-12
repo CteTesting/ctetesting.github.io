@@ -542,7 +542,7 @@ display: flex; /* Show dropdown when active */
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 667px) {
 .page-container {
   flex-direction: column;
 }
@@ -582,7 +582,7 @@ display: flex; /* Show dropdown when active */
 }
 
 /* Navbar for Mobile */
-@media (max-width: 768px) {
+@media (max-width: 667px) {
   .hamburger {
     display: flex; /* Show hamburger on mobile */
   }
