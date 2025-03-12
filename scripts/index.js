@@ -1,3 +1,33 @@
+// Toggle navbar on hamburger button click
+const hamburger = document.getElementById('hamburger');
+const navbar = document.getElementById('navbar');
+
+hamburger.addEventListener('click', () => {
+  navbar.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+hamburger.addEventListener('touchstart', () => {
+  navbar.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
+
+// Close navbar when clicking outside on mobile
+document.addEventListener('click', (event) => {
+  if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
+    navbar.classList.remove('active');
+    hamburger.classList.remove('active');
+  }
+});
+
+// Close navbar when clicking outside on mobile
+document.addEventListener('touchstart', (event) => {
+  if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
+    navbar.classList.remove('active');
+    hamburger.classList.remove('active');
+  }
+});
+
 // Slideshow functionality
 let slideIndex = 0;
 showSlides();
@@ -105,32 +135,3 @@ document.querySelectorAll('.dropdown').forEach(dropdown => {
   });
 });
 
-// Toggle navbar on hamburger button click
-const hamburger = document.getElementById('hamburger');
-const navbar = document.getElementById('navbar');
-
-hamburger.addEventListener('click', () => {
-  navbar.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-hamburger.addEventListener('touchstart', () => {
-  navbar.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// Close navbar when clicking outside on mobile
-document.addEventListener('click', (event) => {
-  if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
-    navbar.classList.remove('active');
-    hamburger.classList.remove('active');
-  }
-});
-
-// Close navbar when clicking outside on mobile
-document.addEventListener('touchstart', (event) => {
-  if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
-    navbar.classList.remove('active');
-    hamburger.classList.remove('active');
-  }
-});
