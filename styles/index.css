@@ -603,6 +603,19 @@ display: flex; /* Show dropdown when active */
     left: 0; /* Slide navbar in when active */
   }
 
+  /* Transform hamburger into "X" when active */
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
   .navbar-links {
     display: flex;
     flex-direction: column;

@@ -114,11 +114,10 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
 });
 
-// Add touch event listener for mobile devices
 hamburger.addEventListener('touchstart', () => {
   navbar.classList.toggle('active');
   hamburger.classList.toggle('active');
-})
+});
 
 // Close navbar when clicking outside on mobile
 document.addEventListener('click', (event) => {
