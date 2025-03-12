@@ -4,33 +4,44 @@ const navbar = document.getElementById('navbar');
 // Track whether the navbar is open
 let isNavOpen = false;
 
-// Track the last tap time to debounce touch events
-let lastTapTime = 0;
-const debounceTime = 300; // 300ms delay between taps
+// Track whether the touchstart event has already been handled
+let touchHandled = false;
 
 // Function to toggle the navbar
-function toggleNav(event) {
-  // Prevent the default behavior for touchstart to avoid double-tap issues
-  if (event.type === 'touchstart') {
-    event.preventDefault();
-  }
-
-  // Debounce the touchstart event
-  const currentTime = new Date().getTime();
-  if (currentTime - lastTapTime < debounceTime) {
-    return; // Ignore rapid successive taps
-  }
-  lastTapTime = currentTime;
-
-  // Toggle the navbar and hamburger
+function toggleNav() {
   isNavOpen = !isNavOpen;
   navbar.classList.toggle('active', isNavOpen);
   hamburger.classList.toggle('active', isNavOpen);
 }
 
-// Add event listeners for both click and touchstart
-hamburger.addEventListener('click', toggleNav);
-hamburger.addEventListener('touchstart', toggleNav);
+// Handle touchstart event
+hamburger.addEventListener('touchstart', (event) => {
+  // Prevent the default behavior to avoid double-tap issues
+  event.preventDefault();
+
+  // If the touchstart event has already been handled, ignore it
+  if (touchHandled) return;
+
+  // Mark the touchstart event as handled
+  touchHandled = true;
+
+  // Toggle the navbar
+  toggleNav();
+
+  // Reset the touchHandled flag after a short delay
+  setTimeout(() => {
+    touchHandled = false;
+  }, 300); // 300ms delay
+});
+
+// Handle click event
+hamburger.addEventListener('click', () => {
+  // If the touchstart event has already been handled, ignore the click event
+  if (touchHandled) return;
+
+  // Toggle the navbar
+  toggleNav();
+});
 
 // Close the navbar when clicking/touching outside
 document.addEventListener('click', (event) => {
