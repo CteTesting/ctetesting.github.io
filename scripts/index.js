@@ -113,11 +113,6 @@ hamburger.addEventListener('click', () => {
   navbar.classList.toggle('active');
 });
 
-// Toggle dropdowns on mobile
-function toggleDropdown(button) {
-  const dropdown = button.parentElement;
-  dropdown.classList.toggle('active');
-}
 
 // Close navbar when clicking outside on mobile
 document.addEventListener('click', (event) => {
