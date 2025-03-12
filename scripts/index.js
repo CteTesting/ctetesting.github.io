@@ -1,18 +1,16 @@
-// Toggle navbar on hamburger button click
 const hamburger = document.getElementById('hamburger');
 const navbar = document.getElementById('navbar');
 
-hamburger.addEventListener('click', () => {
+// Add both click and touchstart event listeners
+hamburger.addEventListener('click', toggleNav);
+hamburger.addEventListener('touchstart', toggleNav);
+
+function toggleNav() {
   navbar.classList.toggle('active');
   hamburger.classList.toggle('active');
-});
+}
 
-hamburger.addEventListener('touchstart', () => {
-  navbar.classList.toggle('active');
-  hamburger.classList.toggle('active');
-});
-
-// Close navbar when clicking outside on mobile
+// Close navbar when clicking/touching outside
 document.addEventListener('click', (event) => {
   if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
     navbar.classList.remove('active');
@@ -20,7 +18,6 @@ document.addEventListener('click', (event) => {
   }
 });
 
-// Close navbar when clicking outside on mobile
 document.addEventListener('touchstart', (event) => {
   if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
     navbar.classList.remove('active');
