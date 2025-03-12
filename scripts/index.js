@@ -4,12 +4,23 @@ const navbar = document.getElementById('navbar');
 // Track whether the navbar is open
 let isNavOpen = false;
 
+// Track the last tap time to debounce touch events
+let lastTapTime = 0;
+const debounceTime = 300; // 300ms delay between taps
+
 // Function to toggle the navbar
 function toggleNav(event) {
-  // Prevent the click event from firing after touchstart on mobile
+  // Prevent the default behavior for touchstart to avoid double-tap issues
   if (event.type === 'touchstart') {
     event.preventDefault();
   }
+
+  // Debounce the touchstart event
+  const currentTime = new Date().getTime();
+  if (currentTime - lastTapTime < debounceTime) {
+    return; // Ignore rapid successive taps
+  }
+  lastTapTime = currentTime;
 
   // Toggle the navbar and hamburger
   isNavOpen = !isNavOpen;
