@@ -151,19 +151,32 @@ document.querySelectorAll('.dropdown-btn').forEach(button => {
 const mobileMenu = document.getElementById('mobile-menu');
 const navbarLinks = document.querySelector('.navbar-links');
 
-mobileMenu.addEventListener('click', () => {
-  navbarLinks.classList.toggle('active');
-  mobileMenu.classList.toggle('active');
-});
+m// Toggle dropdowns on mobile
+document.querySelectorAll('.navbar .dropdown-btn').forEach(button => {
+  button.addEventListener('click', (event) => {
+    // Prevent the default behavior (e.g., following a link)
+    event.preventDefault();
 
-// Dropdown functionality for mobile
-document.querySelectorAll('.dropdown').forEach(dropdown => {
-  const dropdownBtn = dropdown.querySelector('.dropdown-btn');
-  dropdownBtn.addEventListener('click', (e) => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault(); // Prevent link navigation on mobile
-      dropdown.classList.toggle('active');
-    }
+    // Toggle the active class on the parent dropdown
+    const dropdown = button.closest('.dropdown');
+    dropdown.classList.toggle('active');
+
+    // Close other dropdowns when one is opened
+    document.querySelectorAll('.navbar .dropdown').forEach(otherDropdown => {
+      if (otherDropdown !== dropdown) {
+        otherDropdown.classList.remove('active');
+      }
+    });
   });
 });
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.navbar .dropdown')) {
+    document.querySelectorAll('.navbar .dropdown').forEach(dropdown => {
+      dropdown.classList.remove('active');
+    });
+  }
+});
+
 

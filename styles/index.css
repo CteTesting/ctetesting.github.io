@@ -616,6 +616,9 @@ display: flex; /* Show dropdown when active */
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
+  .navbar .dropdown:hover .dropdown-content {
+    display: none; /* Disable hover-based dropdowns */
+
   .navbar-links {
     display: flex;
     flex-direction: column;
@@ -630,31 +633,39 @@ display: flex; /* Show dropdown when active */
     padding: 10px;
   }
 
-  .dropdown-content {
+  .navbar .dropdown-content {
     display: none; /* Hide dropdown content by default */
+    position: static; /* Reset position for mobile */
+    background: transparent; /* Remove background for mobile */
+    box-shadow: none; /* Remove shadow for mobile */
     padding-left: 20px; /* Indent dropdown items */
   }
 
-  .dropdown.active .dropdown-content {
+  .navbar .dropdown.active .dropdown-content {
     display: block; /* Show dropdown content when active */
   }
 
-  .mobile-dropdown-btn {
-    display: block; /* Show dropdown button on mobile */
+  .navbar .dropdown-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
     background: none;
     border: none;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1em;
     cursor: pointer;
-    padding: 10px;
-    position: absolute;
-    right: 10px;
-    top: 0;
+  }
+  .navbar .dropdown-btn .arrow {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
   }
 
-  .dropdown-btn .arrow {
-    display: none; /* Hide arrow on mobile */
+  .navbar .dropdown.active .dropdown-btn .arrow {
+    transform: rotate(180deg); /* Rotate arrow when dropdown is active */
   }
+}
 
   /* Transform hamburger into "X" when active */
   .hamburger.active .bar:nth-child(1) {
