@@ -563,82 +563,95 @@ display: flex; /* Show dropdown when active */
 
 /* Hamburger Button */
 .hamburger {
-display: none; /* Hidden by default */
-flex-direction: column;
-cursor: pointer;
-padding: 10px;
-position: fixed;
-top: 20px;
-left: 20px;
-z-index: 1001; /* Ensure it's above the navbar */
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Ensure it's above the navbar */
 }
 
 .hamburger .bar {
-width: 25px;
-height: 3px;
-background: #fff;
-margin: 4px 0;
-transition: transform 0.3s ease, opacity 0.3s ease;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Navbar for Mobile */
 @media (max-width: 768px) {
-.hamburger {
-  display: flex; /* Show hamburger on mobile */
-}
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: -250px; /* Hide navbar off-screen by default */
-  width: 250px;
-  height: 100vh;
-  background: #0a2e5a;
-  transition: left 0.3s ease;
-  z-index: 1000;
-}
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide navbar off-screen by default */
+    width: 250px;
+    height: 100vh;
+    background: #0a2e5a;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
 
-.navbar.active {
-  left: 0; /* Slide navbar in when active */
-}
+  .navbar.active {
+    left: 0; /* Slide navbar in when active */
+  }
 
-.navbar-links {
-  display: flex;
-  flex-direction: column;
-  padding-top: 60px; /* Space for the hamburger button */
-}
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; /* Space for the hamburger button */
+  }
 
-.navbar-links li {
-  margin-bottom: 10px;
-}
+  .navbar-links li {
+    margin-bottom: 10px;
+  }
 
-.navbar-links li a {
-  padding: 10px;
-}
+  .navbar-links li a {
+    padding: 10px;
+  }
 
-.dropdown-content {
-  display: none; /* Hide dropdown content by default */
-  padding-left: 20px; /* Indent dropdown items */
-}
+  .dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    padding-left: 20px; /* Indent dropdown items */
+  }
 
-.dropdown.active .dropdown-content {
-  display: block; /* Show dropdown content when active */
-}
+  .dropdown.active .dropdown-content {
+    display: block; /* Show dropdown content when active */
+  }
 
-.mobile-dropdown-btn {
-  display: block; /* Show dropdown button on mobile */
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.2em;
-  cursor: pointer;
-  padding: 10px;
-  position: absolute;
-  right: 10px;
-  top: 0;
-}
+  .mobile-dropdown-btn {
+    display: block; /* Show dropdown button on mobile */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+  }
 
-.dropdown-btn .arrow {
-  display: none; /* Hide arrow on mobile */
-}
+  .dropdown-btn .arrow {
+    display: none; /* Hide arrow on mobile */
+  }
+
+  /* Transform hamburger into "X" when active */
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
 }

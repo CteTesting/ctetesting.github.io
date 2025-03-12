@@ -111,12 +111,13 @@ const navbar = document.getElementById('navbar');
 
 hamburger.addEventListener('click', () => {
   navbar.classList.toggle('active');
+  hamburger.classList.toggle('active');
 });
-
 
 // Close navbar when clicking outside on mobile
 document.addEventListener('click', (event) => {
   if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
     navbar.classList.remove('active');
+    hamburger.classList.remove('active');
   }
 });
