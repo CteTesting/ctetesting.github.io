@@ -1,0 +1,205 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #0a2e5a, #1a4a7a);
+    color: #fff;
+  }
+  
+  header, section {
+    padding: 20px;
+  }
+  
+  h1, h2, h3 {
+    color: #ff8c42; /* Orange */
+  }
+  
+  a {
+    color: #ff8c42;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* CTE Summary Section */
+  .cte-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .cte-summary img {
+    max-width: 150px;
+  }
+  
+ /* Slideshow Section */
+.slideshow {
+    position: relative;
+    max-width: 800px; /* Adjust this to your desired width */
+    width: 100%;
+    height: 800px; /* Make it square by matching height to width */
+    margin: 20px auto; /* Center the slideshow */
+    overflow: hidden;
+    border-radius: 10px; /* Optional: Add rounded corners */
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Start with slides hidden */
+    transition: opacity 1s ease; /* Fade effect */
+  }
+  
+  .slide.active {
+    opacity: 1; /* Show the active slide */
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+    border-radius: 10px; /* Optional: Match the container's rounded corners */
+  }
+  
+  .slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .slide-content h2 {
+    margin: 0 0 10px 0;
+    color: #fff;
+  }
+  
+  .slide-content button, .slide-content a {
+    background: #ff8c42;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .slide-content a {
+    display: inline-block;
+  }
+  
+/* Video Overlay with Slide-Up Animation */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+    display: flex; /* Ensure the overlay is flex for centering */
+  }
+  
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .overlay video {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff8c42;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Annual Public Notification Section */
+  .notification {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+/* CTE Department Photos Section */
+.department-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .department-photos div {
+    flex: 1 1 200px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 250px;
+  }
+  
+  .department-photos img {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    border-radius: 15px; /* Rounded edges */
+  }
+  
+  .department-photos h3 {
+    margin: 10px 0 5px 0;
+    color: #ff8c42; /* Orange */
+  }
+  
+  .department-photos p {
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+  
+  /* Links Section */
+  .links-section {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+  }
+  
+  .links-section div {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .links-section a {
+    display: block;
+    margin: 10px 0;
+    color: #ff8c42;
+  }

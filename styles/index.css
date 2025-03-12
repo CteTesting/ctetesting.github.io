@@ -1,0 +1,644 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #0a2e5a, #1a4a7a);
+    color: #fff;
+  }
+
+/* Bookmark Banner */
+.bookmark-banner {
+  position: fixed; /* Fixed position to stick to the screen */
+  top: 20px; /* Add space from the top of the screen */
+  right: -50px; /* Adjust this to control how much of the banner sticks out */
+  background: #ff8c42; /* Orange color */
+  color: #fff; /* White text */
+  padding: 10px 60px 10px 20px; /* More padding on the right to make it stick out */
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  border-radius: 0 0 0 5px; /* Rounded bottom-left corner */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background 0.3s ease, right 0.3s ease; /* Smooth hover effect */
+  text-decoration: none; /* Remove underline from link */
+}
+
+/* Hover effect */
+.bookmark-banner:hover {
+  background: #e67e22; /* Darker orange on hover */
+  right: -40px; /* Move the banner slightly to the left on hover */
+}
+
+/* Add a curved cutout to the top-right corner */
+.bookmark-banner::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Position the cutout above the banner */
+  right: 0;
+  width: 20px; /* Width of the cutout */
+  height: 20px; /* Height of the cutout */
+  background: #0a2e5a; /* Match the background color of the page */
+  border-radius: 0 0 0 100%; /* Curved edge */
+  z-index: -1; /* Place it behind the banner */
+}
+
+/* Text inside the banner */
+.bookmark-banner span {
+  display: block;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+  
+  /* Container to constrain content width */
+  .container {
+    max-width: 1200px; /* Adjust as needed */
+    width: 90%; /* Ensures some padding on smaller screens */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+  }
+  
+  /* Header Section */
+  header {
+    padding: 20px 0;
+  }
+  
+  .cte-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .cte-summary img {
+    max-width: 150px;
+  }
+  
+  .cte-summary h1 {
+    color: #ff8c42; /* Orange */
+  }
+  
+/* Slideshow Section */
+.slideshow {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  height: 800px; /* Square aspect ratio */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.slide-content h2 {
+  margin: 0 0 10px 0;
+  color: #fff;
+}
+
+.slide-content button, .slide-content a {
+  background: #ff8c42;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.slide-content a {
+  display: inline-block;
+}
+
+/* Manual Navigation Buttons */
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1.5em;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 10px; /* Position on the left */
+}
+
+.next-btn {
+  right: 10px; /* Position on the right */
+}
+  
+  /* Video Overlay */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .overlay.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .overlay iframe {
+    width: 90%;
+    height: 90%;
+    border: none;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff8c42;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Annual Public Notification Section */
+  .notification {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+  }
+  
+  /* CTE Department Photos Section */
+.department-photos {
+  display: flex;
+  gap: 20px; /* Space between photos */
+  justify-content: flex-start; /* Align photos to the start */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  padding: 10px 0; /* Add some padding */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #ff8c42 #0a2e5a; /* For Firefox */
+}
+
+/* Custom Scrollbar for WebKit Browsers (Chrome, Safari, Edge) */
+.department-photos::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.department-photos::-webkit-scrollbar-track {
+  background: #0a2e5a; /* Dark blue track */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.department-photos::-webkit-scrollbar-thumb {
+  background: #ff8c42; /* Orange thumb */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.department-photos::-webkit-scrollbar-thumb:hover {
+  background: #e67e22; /* Darker orange on hover */
+}
+
+.department-photos div {
+  flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px; /* Fixed width for each card */
+}
+
+.department-photos img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px; /* Rounded edges */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-photos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.department-photos h3 {
+  margin: 10px 0 5px 0;
+  color: #ff8c42;
+}
+
+.department-photos p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+  
+ /* Links Section with Dropdown Menus */
+.links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.links-section h2 {
+  color: #ff8c42;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.links-section .subheading {
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Minutes and Brochure Dropdowns (Click) */
+.links-section .dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.links-section .dropdown-btn {
+  width: 100%;
+  padding: 10px;
+  background: #ff8c42; /* Orange */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links-section .dropdown-btn .arrow {
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.links-section .dropdown-btn.active .arrow {
+  transform: rotate(180deg);
+}
+
+.links-section .dropdown-content {
+  display: none;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.links-section .dropdown-content a {
+  color: #ff8c42;
+  text-decoration: none;
+  padding: 8px 0;
+  transition: background 0.3s ease;
+  display: block; /* Ensure each link is on its own line */
+}
+
+.links-section .dropdown-content a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.links-section .dropdown.active .dropdown-content {
+  display: flex; /* Show dropdown when active */
+}
+
+
+
+  /* Flex Container for Navbar and Main Content */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+/* Navigation Bar (Sidebar) */
+.navbar {
+  background: #0a2e5a; /* Dark blue */
+  width: 250px; /* Fixed width for sidebar */
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Full height */
+  overflow-y: auto; /* Scrollable if content overflows */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.navbar-brand img {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar-brand h1 {
+  color: #ff8c42; /* Orange */
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.navbar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  margin-bottom: 10px;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.navbar-links li a:hover {
+  background: rgba(255, 255, 255, 0.1); /* Light background on hover */
+  color: #ff8c42; /* Orange on hover */
+}
+
+.navbar-links li a.active {
+  color: #ff8c42; /* Orange for active link */
+  font-weight: bold;
+}
+
+/* Navbar Dropdowns (Hover) */
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #3D689C;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown on hover */
+}
+  
+/* Minutes and Brochure Dropdowns (Click) */
+.links-section .dropdown-content {
+  display: none;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.links-section .dropdown.active .dropdown-content {
+  display: flex; /* Show dropdown when active */
+}
+
+  .links-section h2 {
+    color: #ff8c42; /* Orange */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .links-section .subheading {
+    color: #fff;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .dropdown {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .dropdown-btn {
+    width: 100%;
+    padding: 10px;
+    background: #ff8c42; /* Orange */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dropdown-btn .arrow {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-btn.active .arrow {
+    transform: rotate(180deg);
+  }
+  
+  .dropdown-content {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px;
+  }
+  
+  .dropdown-content a {
+    color: #ff8c42;
+    text-decoration: none;
+    padding: 8px 0;
+    transition: background 0.3s ease;
+    display: block; /* Ensure each link is on its own line */
+  }
+  
+  .dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .dropdown.active .dropdown-content {
+    display: flex;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+  }
+  
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .page-container {
+    flex-direction: column;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001; /* Ensure it's above the navbar */
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Navbar for Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide navbar off-screen by default */
+    width: 250px;
+    height: 100vh;
+    background: #0a2e5a;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navbar.active {
+    left: 0; /* Slide navbar in when active */
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; /* Space for the hamburger button */
+  }
+
+  .navbar-links li {
+    margin-bottom: 10px;
+  }
+
+  .navbar-links li a {
+    padding: 10px;
+  }
+
+  .dropdown-content {
+    display: none; /* Hide dropdown content by default */
+    padding-left: 20px; /* Indent dropdown items */
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block; /* Show dropdown content when active */
+  }
+
+  .mobile-dropdown-btn {
+    display: block; /* Show dropdown button on mobile */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+  }
+
+  .dropdown-btn .arrow {
+    display: none; /* Hide arrow on mobile */
+  }
+}

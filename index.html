@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUSD CTE - Home</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<!-- Banner -->
+<a href="schedule.html" class="bookmark-banner">
+  <span>Build Your Schedule</span>
+</a>
+
+  <!-- Flex Container for Navbar and Main Content -->
+  <div class="page-container">
+
+    <!-- Hamburger Button -->
+<div class="hamburger" id="hamburger">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Navigation Bar (Sidebar) -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-brand">
+    <img src="assets/images/logo.jpg" alt="CTE Logo">
+    <h1>SUSD CTE</h1>
+  </div>
+  <ul class="navbar-links">
+    <!-- Career Technical Education Dropdown -->
+    <li class="dropdown">
+      <a href="index.html" class="dropdown-btn">Career Technical Education <span class="arrow">▼</span></a>
+      <button class="mobile-dropdown-btn" onclick="toggleDropdown(this)">▼</button>
+      <ul class="dropdown-content">
+        <li><a href="career-pathways-susd.html">Career Pathways in SUSD</a></li>
+        <li><a href="career-pathways-industry.html">Pathways by Industry Sectors</a></li>
+        <li><a href="career-student-organizations.html">CT Student Organizations</a></li>
+      </ul>
+    </li>
+    <!-- STEM Programming Dropdown -->
+    <li class="dropdown">
+      <a href="stem-programming.html" class="dropdown-btn">STEM Programming <span class="arrow">▼</span></a>
+      <button class="mobile-dropdown-btn" onclick="toggleDropdown(this)">▼</button>
+      <ul class="dropdown-content">
+        <li><a href="pltw.html">Project Lead the Way (PLTW)</a></li>
+        <li><a href="mesa.html">MESA</a></li>
+      </ul>
+    </li>
+    <!-- Other Links -->
+    <li><a href="career-exploration.html">Career Exploration</a></li>
+    <li><a href="work-permits.html">Work Permits</a></li>
+    <li><a href="college-career-scholarship.html">College, Career, & Scholarship Resources</a></li>
+    <li><a href="work-based-learning.html">Work Based Learning</a></li>
+  </ul>
+</nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+  <div class="container">
+    <header>
+      <div class="cte-summary">
+        <div>
+          <h1>Career & Technical Education (CTE)</h1>
+          <p>Career Technical Education, or CTE, directly prepares students for high-wage, high-demand careers. While CTE includes many of the traditional vocational education programs like construction and automotive repair, it has expanded to cover a wide range of different industry sectors. These include health care, information technology, advanced manufacturing and engineering, hospitality and management, public safety, business, agriculture, and many more.</p>
+          <p>CTE plays an important role in meeting SUSD’s mission to “graduate all students college, career, and community ready.” According to the organization Advance CTE, studies show that students who complete a CTE program have a higher high school graduation rate and are more likely to complete their postsecondary education and receive employment. Career Technical Education develops both technical skills and “soft skills” that increase the employability of students. CTE provides a framework for the next steps a student needs to take to be successful in that field. These next steps might include employment, an apprenticeship, trade school, community college, or a university degree.</p>
+        </div>
+      </div>
+    </header>
+
+<!-- Slideshow Section -->
+<section class="slideshow">
+  <!-- Slide 1 -->
+  <div class="slide active">
+    <img src="assets/images/logo.jpg" alt="Slide 1">
+    <div class="slide-content">
+      <h2>Learn about SUSD's CTE Programs      </h2>
+      <button data-action="video" data-video-url="https://www.youtube.com/embed/GHR8UFLW0dY?si=1n5yq7deTMnP82RZ" onclick="handleSlideButtonClick()">Watch Video</button>
+    </div>
+  </div>
+  <!-- Slide 2 -->
+  <div class="slide">
+    <img src="assets/images/frank.webp" alt="Slide 2">
+    <div class="slide-content">
+      <h2>CTE in the News      </h2>
+      <button data-action="website" data-url="https://www.recordnet.com/story/news/education/2023/05/25/franklins-tiny-home-highlights-growing-trade-programs-at-susd/70250279007/" onclick="handleSlideButtonClick()">Learn More</button>
+    </div>
+  </div>
+  <!-- Slide 3 -->
+  <div class="slide">
+    <img src="assets/images/step.png" alt="Slide 3">
+    <div class="slide-content">
+      <h2>4 Steps to a Successful Career      </h2>
+      <button data-action="video" data-video-url="https://www.youtube.com/embed/twWcxIfa2zo?si=ghMyLFu5MGzAKS-o" onclick="handleSlideButtonClick()">Watch Video</button>
+    </div>
+  </div>
+  <!-- Manual Navigation Buttons -->
+  <button class="prev-btn" onclick="prevSlide()">&#10094;</button> <!-- Left arrow -->
+  <button class="next-btn" onclick="nextSlide()">&#10095;</button> <!-- Right arrow -->
+</section>
+
+<!-- Video Overlay -->
+<div class="overlay" id="videoOverlay">
+  <iframe id="overlayVideo" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <button onclick="closeVideo()" class="close-btn">Close</button>
+</div>
+
+    <!-- Annual Public Notification Section -->
+    <section class="notification">
+      <h2>Annual Public Notification</h2>
+      <p>The Stockton Unified School District does not discriminate on the basis of race, color, national origin, sex, or disability, or any other basis protected by law or regulation in its program or activities and provides equal access to the Boy Scouts of America and other designated youth groups.</p>
+      <p>The Stockton Unified School District offers classes in many career and technical education program areas of Agriculture; Arts, Media & Entertainment; Building and Construction Trade; Business & Finance; Education; Environmental Resources; Engineering; Health Science; Information & Communication Technologies; Manufacturing; Public Service, and Transportation under its open admissions policy. For more information about CTE course offerings and admissions criteria, contact the Director of Career Technical Education & STEM, Nathan Haley, 56 S. Lincoln St. Stockton, CA 95203, (209) 733-7040 Ext. 2074, nhaley@stocktonusd.net.</p>
+      <p>Lack of English language proficiency will not be a barrier to admission and participation in career and technical education programs. The following people have been designated to handle inquiries regarding the nondiscrimination policies: If you, or your student, have been subjected to discrimination, you should contact your school site principal and/or: Joanne Castillo, Director of Constituent Services/Title IX Coordinator (209) 933-7037 Ext. 2195, jmcastillo@stocktonusd.net; Youlin Aissa, Director of Curriculum/Professional Development; Title II Coordinator (209) 933-7040 ext. 2330, yaissa@stocktonusd.net; Jennifer Robles, School Counselor Program Specialist/Section 504 Coordinator (209) 933-7130 ext. 2617, jrobles@stocktonusd.net.</p>
+    </section>
+
+    <!-- CTE Department Photos Section -->
+    <section class="department">
+      <h2>CTE Department</h2>
+      <div class="department-photos">
+        <!-- Staff Member 1 -->
+        <div>
+          <img src="assets/images/Nathan 1.jpg" alt="Staff Member 1">
+          <h3>Nathan Haley</h3>
+          <p>Director of Career Technical Education and STEM</p>
+          <p>nhaley@stocktonusd.net</p>
+          <p>(209) 933-7040 ex. 2074</p>
+        </div>
+        <!-- Staff Member 2 -->
+        <div>
+          <img src="assets/images/Krista 1.jpg" alt="Staff Member 2">
+          <h3>Krista Vannest</h3>
+          <p>Work-Based Learning Coordinator</p>
+          <p>kvannest@stocktonusd.net</p>
+          <p>209-933-7040 ex.2737</p>
+        </div>
+        <!-- Staff Member 3 -->
+        <div>
+          <img src="assets/images/Rachael 1.jpg" alt="Staff Member 3">
+          <h3>Rachael Navarrete</h3>
+          <p>STEM Coordinator</p>
+          <p>rachaelnavarrete@stocktonusd.net</p>
+          <p>209-933-7040 ex. 2735</p>
+        </div>
+        <!-- Staff Member 4 -->
+        <div>
+          <img src="assets/images/Marta.png" alt="Staff Member 4">
+          <h3>Martina Quinones</h3>
+          <p>Program Technician</p>
+          <p>mquinones@stocktonusd.net</p>
+          <p>209-933-7040 ex. 2744</p>
+        </div>
+        <!-- Staff Member 5 -->
+        <div>
+          <img src="assets/images/Angela 1.jpg" alt="Staff Member 5">
+          <h3>Angela Asborno</h3>
+          <p>Senior Administrative Assistant</p>
+          <p>aasborno@stocktonusd.net</p>
+          <p>209-933-7040 ex. 2736          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="links-section">
+      <h2>SUSD Perkins Advisory Committee Agendas and Minutes</h2>
+      <p class="subheading">Career Technical Education Programs are required to hold Advisory Committees with industry representatives. Advisory committees ensure that Career Technical Education curriculum is current and relevant and that funding is spent on equipment and professional development that is industry standard.</p>
+
+      <!-- Committees & Minutes Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn">Committees & Minutes <span class="arrow">▼</span></button>
+        <div class="dropdown-content">
+          <a href="#">2015 Perkins Core Indicator Report</a>
+          <a href="#">2015 Perkins Advisory Committee Meeting Minutes</a>
+          <a href="#">2016 Perkins Advisory Committee Meeting Minutes</a>
+          <a href="#">2016 Perkins Core Indicator Report</a>
+          <a href="#">2017 Perkins Advisory Committee Meeting Minutes</a>
+          <a href="#">2017 CTSO Student Advisory Meeting Minutes</a>
+          <a href="#">2018 Perkins Advisory Committee Meeting Minu</a>
+          <a href="#">2019 Perkins Advisory Committee Meeting Minutes</a>
+          <a href="#">2020 Perkins Comprehensive Local Needs Assessment Summary</a>
+          <a href="#">Spring 2021 Perkins Advisory Committee Meeting Minutes</a>
+          <a href="#">Fall 2021 Perkins Advisory Committee Meeting Minutes</a>
+        </div>
+      </div>
+
+      <!-- Pathway Brochures Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn">Pathway Brochures <span class="arrow">▼</span></button>
+        <div class="dropdown-content">
+          <a href="#">2022-23 CTE Pathways Brochure</a>
+          <a href="#">2022-23 CTE Pathways Brochure Spanish</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  </div>
+  </div>
+  </body>
+
+  <script src="scripts/index.js"></script>
+</body>
+</html>
