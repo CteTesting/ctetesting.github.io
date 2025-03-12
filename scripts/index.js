@@ -114,8 +114,22 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
 });
 
+// Add touch event listener for mobile devices
+hamburger.addEventListener('touchstart', () => {
+  navbar.classList.toggle('active');
+  hamburger.classList.toggle('active');
+})
+
 // Close navbar when clicking outside on mobile
 document.addEventListener('click', (event) => {
+  if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
+    navbar.classList.remove('active');
+    hamburger.classList.remove('active');
+  }
+});
+
+// Close navbar when clicking outside on mobile
+document.addEventListener('touchstart', (event) => {
   if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
     navbar.classList.remove('active');
     hamburger.classList.remove('active');

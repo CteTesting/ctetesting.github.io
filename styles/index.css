@@ -590,12 +590,13 @@ display: flex; /* Show dropdown when active */
   .navbar {
     position: fixed;
     top: 0;
-    left: -250px; /* Hide navbar off-screen by default */
+    left: -100%; /* Hide navbar completely off-screen */
     width: 250px;
     height: 100vh;
     background: #0a2e5a;
     transition: left 0.3s ease;
     z-index: 1000;
+    overflow-y: auto; /* Allow scrolling if content overflows */
   }
 
   .navbar.active {
