@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUSD CTE - Build Your Pathway</title>
+  <link rel="stylesheet" href="styles/schedule.css">
+</head>
+<body>
+
+  <!-- Flex Container for Navbar and Main Content -->
+  <div class="page-container">
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <!-- Navigation Bar (Sidebar) -->
+    <nav class="navbar" id="navbar">
+      <div class="navbar-brand">
+        <img src="assets/images/logo.jpg" alt="CTE Logo">
+        <h1>SUSD CTE</h1>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <!-- Career Technical Education Dropdown -->
+        <li class="dropdown">
+          <a href="index.html" class="dropdown-btn">Career Technical Education <span class="arrow">▼</span></a>
+          <ul class="dropdown-content">
+            <li><a href="career-pathways-susd.html">Career Pathways in SUSD</a></li>
+            <li><a href="career-pathways-industry.html">Pathways by Industry Sectors</a></li>
+            <li><a href="career-student-organizations.html">CT Student Organizations</a></li>
+          </ul>
+        </li>
+        <!-- STEM Programming Dropdown -->
+        <li class="dropdown">
+          <a href="stem-programming.html" class="dropdown-btn">STEM Programming <span class="arrow">▼</span></a>
+          <ul class="dropdown-content">
+            <li><a href="pltw.html">Project Lead the Way (PLTW)</a></li>
+            <li><a href="mesa.html">MESA</a></li>
+          </ul>
+        </li>
+        <!-- Other Links -->
+        <li><a href="career-exploration.html">Career Exploration</a></li>
+        <li><a href="work-permits.html">Work Permits</a></li>
+        <li><a href="college-career-scholarship.html">College, Career, & Scholarship Resources</a></li>
+        <li><a href="work-based-learning.html">Work Based Learning</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="container">
+        <header>
+          <div class="cte-summary">
+            <!-- Academy Logo -->
+            <div class="academy-logo">
+              <img src="assets/images/tech.png" alt="Academy Logo" id="academy-logo">
+            </div>
+            <!-- Header Content -->
+            <div class="header-content">
+              <h1>Build Your Class Pathway</h1>
+              <p>Welcome to the SUSD CTE Class Builder! Use this tool to create your personalized class schedule and plan your academic journey. Explore the available classes, drag and drop them into your pathway, and prepare for a successful future.</p>
+              <p>Start building your schedule today and take the first step toward achieving your career and educational goals!</p>
+              <button id="open-builder">Open Class Builder</button>
+            </div>
+            <!-- Optional: Pathway Illustration -->
+            <img src="assets/images/logo.jpg" alt="CTE Pathway Illustration" class="header-image">
+          </div>
+        </header>
+
+        <!-- Class Builder Overlay -->
+        <div class="overlay" id="builder-overlay">
+          <div class="overlay-content">
+            <button id="close-builder">Close</button>
+            <!-- Class Builder Content -->
+            <section class="available-classes">
+              <h2>Available Classes</h2>
+              <div id="class-dropdowns">
+                <!-- English Dropdown -->
+                <div class="dropdown">
+                  <div class="dropdown-header" onclick="toggleDropdown(this)">English ▼</div>
+                  <div class="dropdown-content">
+                    <div class="draggable-option" draggable="true">English I</div>
+                    <div class="draggable-option" draggable="true">English II</div>
+                    <div class="draggable-option" draggable="true">English III</div>
+                    <div class="draggable-option" draggable="true">English IV</div>
+                  </div>
+                </div>
+                <!-- Math Dropdown -->
+                <div class="dropdown">
+                  <div class="dropdown-header" onclick="toggleDropdown(this)">Math ▼</div>
+                  <div class="dropdown-content">
+                    <div class="draggable-option" draggable="true">222100 Algebra II</div>
+                    <div class="draggable-option" draggable="true">222400 Pre-Calculus</div>
+                    <div class="draggable-option" draggable="true">222410 Pre-Calculus H**</div>
+                    <div class="draggable-option" draggable="true">222600 Statistics</div>
+                    <div class="draggable-option" draggable="true">227300 Personal Finance</div>
+                  </div>
+                </div>
+                <!-- Science Dropdown -->
+                <div class="dropdown">
+                  <div class="dropdown-header" onclick="toggleDropdown(this)">Science ▼</div>
+                  <div class="dropdown-content">
+                    <div class="draggable-option" draggable="true">233000 Anatomy</div>
+                    <div class="draggable-option" draggable="true">232310 NGSS Chemistry Honors**</div>
+                    <div class="draggable-option" draggable="true">Biology</div>
+                    <div class="draggable-option" draggable="true">Physics</div>
+                  </div>
+                </div>
+                <!-- Social Science Dropdown -->
+                <div class="dropdown">
+                  <div class="dropdown-header" onclick="toggleDropdown(this)">Social Science ▼</div>
+                  <div class="dropdown-content">
+                    <div class="draggable-option" draggable="true">Ethnic Studies</div>
+                    <div class="draggable-option" draggable="true">World History</div>
+                    <div class="draggable-option" draggable="true">US History</div>
+                    <div class="draggable-option" draggable="true">Gov/Econ</div>
+                  </div>
+                </div>
+                <!-- Art Dropdown -->
+                <div class="dropdown">
+                  <div class="dropdown-header" onclick="toggleDropdown(this)">Art ▼</div>
+                  <div class="dropdown-content">
+                    <div class="draggable-option" draggable="true">262110 Art II Honors**</div>
+                    <div class="draggable-option" draggable="true">262210 Art III Honors**</div>
+                    <div class="draggable-option" draggable="true">Art I</div>
+                    <div class="draggable-option" draggable="true">Drawing (DEP)</div>
+                  </div>
+                </div>
+                <!-- Electives Dropdown -->
+                <div class="dropdown">
+                  <div class="dropdown-header" onclick="toggleDropdown(this)">Electives ▼</div>
+                  <div class="dropdown-content">
+                    <div class="draggable-option" draggable="true">521500 Education I</div>
+                    <div class="draggable-option" draggable="true">521600 Education II</div>
+                    <div class="draggable-option" draggable="true">537000 Multimedia I</div>
+                    <div class="draggable-option" draggable="true">537100 Multimedia II</div>
+                    <div class="draggable-option" draggable="true">808500 PLUS**</div>
+                    <div class="draggable-option" draggable="true">292100 PE II</div>
+                    <div class="draggable-option" draggable="true">853300 Drawing (DEP)</div>
+                    <div class="draggable-option" draggable="true">853401 Intro to Bus. 20 (DEP)</div>
+                    <div class="draggable-option" draggable="true">859010 History 17A (DEP)</div>
+                    <div class="draggable-option" draggable="true">858600 Hist 17B (DEP)</div>
+                    <div class="draggable-option" draggable="true">852700 Intro to Psychology</div>
+                    <div class="draggable-option" draggable="true">859300 STATS 12</div>
+                    <div class="draggable-option" draggable="true">852000 Comm St.1A (DEP)</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Class Pathway Table -->
+            <section class="pathway-table">
+              <h2>Class Pathway</h2>
+              <table id="pathway">
+                <thead>
+                  <tr>
+                    <th>Grade</th>
+                    <th>CTE Pathway Courses</th>
+                    <th>English</th>
+                    <th>Math</th>
+                    <th>Science</th>
+                    <th>Social Science</th>
+                    <th>Other Courses</th>
+                    <th>Other Courses</th>
+                    <th>Advisory</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>9th</td>
+                    <td>GFSF/EL</td>
+                    <td>English I</td>
+                    <td>Algebra I</td>
+                    <td>Biology</td>
+                    <td>Ethnic Studies</td>
+                    <td>PE</td>
+                    <td>Art I</td>
+                    <td>Advisory</td>
+                  </tr>
+                  <tr>
+                    <td>10th</td>
+                    <td>CTE</td>
+                    <td>English II</td>
+                    <td>Geometry</td>
+                    <td>Science</td>
+                    <td>World History</td>
+                    <td>PE</td>
+                    <td>LOTE I</td>
+                    <td>Advisory</td>
+                  </tr>
+                  <tr>
+                    <td>11th</td>
+                    <td>CTE</td>
+                    <td>English III</td>
+                    <td>Algebra II</td>
+                    <td>Physics</td>
+                    <td>US History</td>
+                    <td>LOTE II</td>
+                    <td class="droppable">[Blank]</td>
+                    <td>Advisory</td>
+                  </tr>
+                  <tr>
+                    <td>12th</td>
+                    <td>CTE</td>
+                    <td>English IV</td>
+                    <td class="droppable">[Blank]</td>
+                    <td class="droppable">[Blank]</td>
+                    <td>Gov/Econ</td>
+                    <td class="droppable">[Blank]</td>
+                    <td class="droppable">[Blank]</td>
+                    <td>Advisory</td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Reset Button -->
+              <button id="reset-button">Reset</button>
+              <button id="confirm-button">Confirm Selections</button>
+              <!-- Results Section -->
+              <div id="results"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- School Selection Popup -->
+<div class="school-popup-overlay" id="school-popup-overlay">
+  <div class="school-popup">
+    <h2>Select Your School</h2>
+    <p>Please choose your school to personalize your experience:</p>
+    <div class="school-buttons">
+      <!-- Weber Institute -->
+      <button class="school-button" data-primary="#1E3A8A" data-secondary="#FFD700">
+        <img src="assets/images/weber-logo.png" alt="Weber Institute Logo" class="school-logo">
+        Weber Institute
+      </button>
+      <!-- Caesar Chavez -->
+      <button class="school-button" data-primary="#FFD700" data-secondary="#1E3A8A">
+        <img src="assets/images/caesar-logo.png" alt="Caesar Chavez Logo" class="school-logo">
+        Caesar Chavez
+      </button>
+      <!-- Edison -->
+      <button class="school-button" data-primary="#DC2626" data-secondary="#1E3A8A">
+        <img src="assets/images/edison-logo.png" alt="Edison Logo" class="school-logo">
+        Edison
+      </button>
+      <!-- Franklin -->
+      <button class="school-button" data-primary="#2563EB" data-secondary="#FFD700">
+        <img src="assets/images/franklin-logo.png" alt="Franklin Logo" class="school-logo">
+        Franklin
+      </button>
+      <!-- Jane Frederick -->
+      <button class="school-button" data-primary="#4B5563" data-secondary="#FFD700">
+        <img src="assets/images/jane-logo.png" alt="Jane Frederick Logo" class="school-logo">
+        Jane Frederick
+      </button>
+      <!-- Stagg -->
+      <button class="school-button" data-primary="#065F46" data-secondary="#FFD700">
+        <img src="assets/images/stagg-logo.png" alt="Stagg Logo" class="school-logo">
+        Stagg
+      </button>
+      <!-- Merlo -->
+      <button class="school-button" data-primary="#7C3AED" data-secondary="#FFD700">
+        <img src="assets/images/merlo-logo.png" alt="Merlo Logo" class="school-logo">
+        Merlo
+      </button>
+      <!-- Pacific Law Academy -->
+      <button class="school-button" data-primary="#1E40AF" data-secondary="#FFD700">
+        <img src="assets/images/pacific-logo.png" alt="Pacific Law Academy Logo" class="school-logo">
+        Pacific Law Academy
+      </button>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Academy Selection Popup -->
+<div class="academy-popup-overlay" id="academy-popup-overlay">
+  <div class="academy-popup">
+    <h2>Select Your Academy</h2>
+    <p>Please choose your academy to personalize your experience:</p>
+    <div class="academy-buttons">
+      <!-- Freshman Academy -->
+      <button class="academy-button" data-primary="#001F3F" data-secondary="#FFFFFF" data-logo="assets/images/fresh.jpg">
+        Freshman Academy
+      </button>
+      <!-- Technology Academy -->
+      <button class="academy-button" data-primary="#800020" data-secondary="#2d6316" data-logo="assets/images/tech.png">
+        Technology Academy
+      </button>
+      <!-- Health Academy -->
+      <button class="academy-button" data-primary="#FFFFFF" data-secondary="#000000" data-logo="assets/images/health.jpg" data-text-color="#000000">
+        Health Academy
+      </button>
+      <!-- Transportation Academy -->
+      <button class="academy-button" data-primary="#0000FF" data-secondary="#FFFFFF" data-logo="assets/images/auto.jpg">
+        Transportation Academy
+      </button>
+    </div>
+  </div>
+</div>
+
+  <script src="scripts/schedule.js"></script>
+  <script src="scripts/alg.js"></script>
+</body>
+</html>
